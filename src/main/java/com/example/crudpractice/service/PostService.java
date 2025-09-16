@@ -8,11 +8,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class PostService {
 
     private final PostRepository postRepository;
 
-    @Transactional
+    
     public void save(Post post) {
         postRepository.save(post);
     }
