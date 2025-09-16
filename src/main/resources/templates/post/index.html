@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판 CRUD 연습</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .main-title {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .menu-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-success {
+            background-color: #28a745;
+            color: white;
+        }
+        .btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1 class="main-title">📝 게시판 CRUD 연습</h1>
+    <p>Spring Boot + JPA + Thymeleaf로 만든 간단한 게시판입니다.</p>
+
+    <div class="menu-buttons">
+        <a href="/posts/new" class="btn btn-primary">✏️ 글 작성하기</a>
+        <a href="/posts" class="btn btn-success">📋 글 목록 보기</a>
+    </div>
+</div>
+</body>
+</html>
