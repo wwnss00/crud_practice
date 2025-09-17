@@ -24,6 +24,13 @@ public class PostService {
         return postRepository.findAll();
     }
 
+    public Post findById(Long id) {
+        return postRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("게시글을 찾을 수 없습니다"));
+    }
+
+
+
 
 
 
