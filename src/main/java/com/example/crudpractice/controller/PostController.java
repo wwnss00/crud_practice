@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller
 @RequiredArgsConstructor
 public class PostController {
@@ -35,6 +37,12 @@ public class PostController {
     }
 
     @GetMapping("/posts")
+    public String postList(Model model) {
+        List<Post> posts = postService.findAll();
+        model.addAttribute("posts", posts);
+        return "post/postList";
+    }
+
 
 
 }
