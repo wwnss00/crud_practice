@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -42,6 +43,15 @@ public class PostController {
         model.addAttribute("posts", posts);
         return "post/postList";
     }
+
+    @GetMapping("/posts/{id}")
+    public String postDetail(@PathVariable Long id, Model model) {
+        Post post = postService.findById(id);
+        model.addAttribute("post", post);
+        return "post/postDetail";
+    }
+
+
 
 
 
