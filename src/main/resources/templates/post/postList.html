@@ -107,7 +107,7 @@
     <tr th:each="post : ${posts}">
         <td class="post-id" th:text="${post.id}">1</td>
         <td>
-            <a th:href="@{/post/{id}(id=${post.id})}"
+            <a th:href="@{/posts/{id}(id=${post.id})}"
                th:text="${post.title}"
                class="post-title">게시글 제목</a>
         </td>
