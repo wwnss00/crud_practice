@@ -22,17 +22,19 @@ public class PostController {
     }
 
 
-    @GetMapping("/posts/save")
+    @GetMapping("/post/save")
     public String saveForm(Model model) {
         model.addAttribute("post", new Post());
         return "post/createPostForm";
     }
 
-    @PostMapping("/posts/save")
+    @PostMapping("/post/save")
     public String savePost(@ModelAttribute("post") Post post) {
         postService.save(post);
         return "redirect:/";
     }
+
+    @GetMapping("/posts")
 
 
 }
