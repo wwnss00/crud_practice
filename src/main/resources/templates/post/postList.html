@@ -112,6 +112,10 @@
                class="post-title">게시글 제목</a>
         </td>
         <td class="post-date">2024-01-16</td>
+        <td>
+            <a th:href="@{/post/{id}/update(id=${post.id})}"
+                class = "post-date">수정</a>
+        </td>
     </tr>
     </tbody>
 </table>
