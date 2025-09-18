@@ -29,6 +29,10 @@ public class PostService {
                 .orElseThrow(() -> new RuntimeException("게시글을 찾을 수 없습니다"));
     }
 
+    public void update(Post post) {
+        postRepository.save(post);
+    }
+
 
 
 
