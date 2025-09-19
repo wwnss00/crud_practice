@@ -34,7 +34,7 @@ public class PostController {
     @PostMapping("/post/save")
     public String savePost(@ModelAttribute("post") Post post) {
         postService.save(post);
-        return "redirect:/";
+        return "redirect:/posts";
     }
 
     @GetMapping("/posts")
@@ -62,6 +62,12 @@ public class PostController {
     public String postUpdate(@PathVariable Long id, @ModelAttribute("post") Post post) {
         postService.update(post);
         return "redirect:/posts/" + id;
+    }
+
+    @PostMapping("/post/{id}/delete")
+    public String postDelete(@PathVariable Long id) {
+        postService.delete(id);
+        return "redirect:/posts";
     }
 
 
