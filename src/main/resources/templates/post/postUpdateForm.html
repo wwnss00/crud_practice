@@ -72,7 +72,8 @@
 <body>
 <div class="form-container">
     <h1>✏️ 글 수정</h1>
-    <form th:action="@{/posts/{id}}" th:object="${post}" method="post">
+    <form th:action="@{/posts/{id}(id=${post.id})}" th:object="${post}" method="post">
+        <input type="hidden" th:field="*{id}">
         <div class="form-group">
             <label for="title">제목</label>
             <input type="text" id="title" th:field="*{title}"
